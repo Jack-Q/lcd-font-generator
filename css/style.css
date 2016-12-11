@@ -1,0 +1,170 @@
+@font-face {
+    font-family: "PIXymbolsLCDW00-Regular";
+    src: url("//db.onlinewebfonts.com/t/b9dbfdab75a87427f11b07a3ef16efad.eot");
+    src: url("//db.onlinewebfonts.com/t/b9dbfdab75a87427f11b07a3ef16efad.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/b9dbfdab75a87427f11b07a3ef16efad.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/b9dbfdab75a87427f11b07a3ef16efad.woff") format("woff"), url("//db.onlinewebfonts.com/t/b9dbfdab75a87427f11b07a3ef16efad.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/b9dbfdab75a87427f11b07a3ef16efad.svg#PIXymbolsLCDW00-Regular") format("svg");
+}
+
+html {
+    font-family: 'PIXymbolsLCDW00-Regular', 'Monaco', 'Consolas', 'Monospace';
+    background: #50ac7d;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #5a5a5a;
+    border-bottom: dashed 2px #70cc9d;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    border-top: dashed 2px #70cc9d;
+    color: #606060;
+}
+
+section.main-wrapper {
+    margin: auto;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.main{
+  width: 976px;
+  margin: auto;
+}
+@media only screen and (min-height: 600px) {
+    .main{
+      margin: 50px auto;
+    }
+}
+
+@media only screen and (min-height: 800px) {
+    .main{
+      margin: 150px auto;
+    }
+}
+
+.character {
+    display: inline-block;
+    background: #50ac7d;
+    height: 400px;
+    width: 200px;
+    padding: 2px;
+    margin: 20px;
+}
+
+.character-code-wrapper {
+    height: 40px;
+    width: 100%;
+    margin: 20px 0;
+    float: left;
+    position: relative;
+}
+
+.character-code {
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    text-align: left;
+    letter-spacing: -2px;
+    color: #cacaca;
+    white-space: pre;
+    background: rgba(220, 220, 220, 0.3);
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    resize: none;
+    font-size: 23px;
+    font-family: Monaco, Consolas;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.character-code-wrapper::before {
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    content: 'copied!';
+    text-align: center;
+    z-index: 100;
+    width: 100%;
+    color: #dadada;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    bottom: 30px;
+    opacity: 0;
+    transition: all ease 300ms;
+}
+
+.character-code-wrapper.copied::before {
+    opacity: 1;
+    bottom: 40px;
+}
+
+.character-row {
+    height: 40px;
+}
+
+.character-code-wrapper::after {
+    display: block;
+    pointer-events: none;
+    line-height: 40px;
+    width: 100%;
+    height: 100%;
+    content: 'click to copy';
+    background-color: rgba(200, 200, 200, 0.3);
+    border-radius: 2px;
+    box-shadow: 0 0 4px 2px rgba(180, 180, 180, 0.1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all ease 200ms;
+}
+
+.character-code-wrapper:hover::after {
+    opacity: 1;
+}
+
+.character-pixel {
+    cursor: pointer;
+    transition: all ease 400ms;
+    background: rgba(220, 255, 240, 0.1);
+    display: block;
+    float: left;
+    height: 32px;
+    width: 32px;
+    border: solid 2px transparent;
+    margin: 2px;
+}
+
+@keyframes pixel-fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.6;
+    }
+}
+
+.character-pixel.on {
+    background: rgba(220, 255, 240, 0.7);
+}
+
+.character-pixel:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+    animation: 0.5s pixel-fade alternate infinite;
+}
+
+.character-pixel.on:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+}
